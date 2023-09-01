@@ -204,3 +204,36 @@ const arrStr14 = [
 
 console.log(arrStr14.filter((arrStr14) => arrStr14.length > 20)); // ['Am loving this challenge']
 
+// About LocalStorage
+
+const input = document.querySelector('#text');
+const todoList = document.querySelector('.todo-list');
+const addBtn = document.querySelector('.add-btn');
+const clrBtn = document.querySelector('.clr-btn');
+
+let itemsArray = localStorage.getItem('item') ?
+JSON.parse(localStorage.getItem('item')) : [];
+
+itemsArray.forEach(addTask);
+function addTask(text) {
+	const li = document.createElement('li');
+	li.textContent = text;
+	todoList.appendChild(li);
+}
+
+addBtn.addEventListener('click', addTodo);
+function addTodo () {
+	itemsArray.push(input.value);
+	localStorage.setItem("item", JSON.stringify(itemsArray));
+	addTask(input.value);
+	input.value = '';
+}
+
+clrBtn.addEventListener('click', del);
+function del() {
+	localStorage.clear();
+	todoList.innerHTML = '';
+	itemsArray = [];
+}
+
+
