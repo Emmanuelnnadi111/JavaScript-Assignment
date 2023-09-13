@@ -62,6 +62,10 @@ for (let result of results) {
 const arrStr = ["Am loving this challenge"];
 arrStr.push("JavaScript is awesome!");
 console.log(arrStr); //['Am loving this challenge', 'JavaScript is awesome!']
+//second example
+const numbersOfArray = [1, 2, 3, 4];
+numbersOfArray.push(6);//[1, 2, 3, 4, 6][1, 2, 3, 4, 6]
+console.log(numbersOfArray);
 
 //Array Pop Method - removes the last  index of the array and returns it
 const arrStr1 = [
@@ -70,6 +74,9 @@ const arrStr1 = [
 	"So much love it",
 ];
 console.log(arrStr1.pop()); //So much love it
+//second example
+const numberArray = [['This is Javascript'], [23, 45], ['Good Morning']];
+console.log(numberArray.pop());//['Good Morning']
 
 //Array Sort Method - sorts the element in the array in alphabetical order or in an orderly manner without changing the original elements of the arrange
 const arrStr2 = [
@@ -78,8 +85,15 @@ const arrStr2 = [
 	"Best challenge",
 	"Finish on time",
 ];
-arrStr2.sort();
+arrStr2.sort((a, b) => a.localeCompare(b));
 console.log(arrStr2); //['Am loving this challenge', 'Best challenge', 'Finish on time', 'This is great']
+//second example
+const fruits = ["Mango", 'Orange', 'Apple', "Grape"];
+const priceOfFruit = ["one thousand", "two hundred", "three hundred", "five hundred"];
+fruits.sort();
+console.log(fruits);//['Apple', 'Grape', 'Mango', 'Orange']
+priceOfFruit.sort();
+console.log(priceOfFruit);//['five hundred', 'one thousand', 'three hundred', 'two hundred']
 
 //Array Slice Method - returns a section of the elements in the array
 const arrStr3 = [
@@ -89,8 +103,10 @@ const arrStr3 = [
 	"Finish on time",
 ];
  console.log(arrStr3.slice(2)); //  ['Best challenge', 'Finish on time']
-
-//Array Split Method
+//second example
+const food = ["Beans", "Rice", "Yam", "Potato"];
+food.splice(1,0, "Soup");
+console.log(food);//['Beans', 'Soup', 'Rice', 'Yam', 'Potato']
 
 
 //Array Unshift Method - adds the new elements to the beginning of the array
@@ -101,6 +117,10 @@ const arrStr5 = [
 ];
 arrStr5.unshift(4, 5);
 console.log(arrStr5); // [4, 5, 1, 2, 3]
+//second Example
+const languages = ["JavaScript", "Python", "Ruby", "Go"];
+languages.unshift("C#", "Java", "Bun", "NodeJs");
+console.log(languages);//['C#', 'Java', 'Bun', 'NodeJs', 'JavaScript', 'Python', 'Ruby', 'Go']
 
 //Array Shift Method - removes the first element in an array and returns it
 const arrStr6 = [
@@ -109,8 +129,12 @@ const arrStr6 = [
 	"Best challenge",
 	"Finish on time",
 ];
-arrStr6.shift(); // ['This is great', 'Best challenge', 'Finish on time']
-console.log(arrStr6);
+arrStr6.shift(); 
+console.log(arrStr6);// ['This is great', 'Best challenge', 'Finish on time']
+//second example
+const programmingLanguage = ["Rust", "Typescript", "ReactJs", "NextJs"];
+programmingLanguage.shift();
+console.log(programmingLanguage);// ['Typescript', 'ReactJs', 'NextJs']
 
 //Array Reverse Method - reverse the elements in the array to start from left to right
 const arrStr7 = [
@@ -122,6 +146,11 @@ const arrStr7 = [
 arrStr7.reverse();
 console.log(arrStr7); // ['Finish on time', 'Best challenge', 'This is great', 'Am loving this challenge']
 
+//second example
+const animals = ["Dogs", "Cats", "Horse"];
+animals.reverse();
+console.log(animals);
+
 //Array IndexOf Method - returns the index of a given element
 const arrStr8 = [
 	"Am loving this challenge",
@@ -130,6 +159,9 @@ const arrStr8 = [
 	"Finish on time",
 ];
 console.log(arrStr8.indexOf("This is great")); // 1
+//second example 
+const getIndexOfArray = [33, 44, 55, 44, 66];
+console.log(getIndexOfArray.indexOf(44, 2));//3
 
 
 //Array lastIndexOf Method - returns the index of an element specified
@@ -140,6 +172,10 @@ const arrStr9 = [
 	"Finish on time",
 ];
 console.log(arrStr9.lastIndexOf("Best challenge")); // 2
+//second example 
+let getString = "Typescript";
+let getLastIndexOf = getString.lastIndexOf('p', 9);
+console.log(getLastIndexOf);
 
 
 //Array Reduce Method - returns a callback function and iterate on each element of the array
@@ -152,6 +188,11 @@ const arrStr10 = [
 const reduceArr = arrStr10.reduce((a, b) => a + b);
 console.log(reduceArr); // 10
 
+let sum = [2, 3, 4, 5, 6];
+let initial = 0;
+console.log(sum.reduce((a,b) => a + b, initial));
+
+
 //Array Join Method - converts all the element in an array into a string and separate them with the specified separator 
 const arrStr11 = [
 	"Am loving this challenge",
@@ -160,6 +201,9 @@ const arrStr11 = [
 	"Finish on time",
 ];
 console.log(arrStr11.join(" + ")); // Am loving this challenge + This is great + Best challenge + Finish on time
+//second example 
+const games = ["Ludo", "Golf", "Football", "Volleyball"];
+console.log(games.join("-"));//Ludo-Golf-Football-Volleyball
 
 
 //Array Splice Method - changes or replaces the content of an array
@@ -192,9 +236,13 @@ const arrStr13 = [
 ];
 const numbers = [1, 2, 3, 4];
 console.log(arrStr13.concat(numbers)); // ['Am loving this challenge', 'This is great', 'Best challenge', 'Finish on time', 1, 2, 3, 4]
+//second Example
+let greet = "Hello ";
+console.log(greet.concat("John"));
 
 
-//Array Find Method - returns the element that meets the required condition
+
+//Array Filter Method - returns the element that meets the required condition
 const arrStr14 = [
 	"Am loving this challenge",
 	"This is great",
@@ -203,6 +251,16 @@ const arrStr14 = [
 ];
 
 console.log(arrStr14.filter((arrStr14) => arrStr14.length > 20)); // ['Am loving this challenge']
+//second example
+let person = [
+	{name: 'Emma', age: 20, profession: "Programmer"},
+	{name: 'peter', age: 20, profession: "cleaner"},
+	{name: 'chidel', age: 20, profession: "Programmer"},
+	{name: 'daniel', age: 20, profession: "consultant"},
+	{name: 'sunny', age: 20, profession: "Programmer"}
+];
+let personFilter = person.filter((person) => person.profession === "Programmer").sort((a,b)=> a.profession).map(person => person.profession && person.name);
+console.log(personFilter);
 
 // About LocalStorage
 
@@ -235,5 +293,45 @@ function del() {
 	todoList.innerHTML = '';
 	itemsArray = [];
 }
+
+//About Session Storage
+const MOON = "🌙";
+const SUN = "☀️";
+const DARK_MODE = "dark";
+const LIGHT_MODE = "light";
+const DEFAULT_MODE = DARK_MODE;
+const switchBtn = document.querySelector('.switch-btn');
+
+
+switchBtn.addEventListener('click', function () {
+	let mode = sessionStorage.getItem('mode');
+	if (mode) {
+		let newMode = mode == DARK_MODE ? LIGHT_MODE : DARK_MODE;
+		setMode(newMode);
+		sessionStorage.setItem('mode', newMode);
+	}
+})
+
+function setMode(mode = DEFAULT_MODE) {
+	if (mode === DARK_MODE) {
+			switchBtn.textContent = SUN;
+			document.body.classList.add(DARK_MODE);
+	}
+	else if (mode === LIGHT_MODE) {
+		switchBtn.textContent = MOON;
+		document.body.classList.remove(LIGHT_MODE);
+	}
+}
+
+
+function init() {
+	let storedMode = sessionStorage.getItem('mode');
+	if (!storedMode) {
+		storedMode = DEFAULT_MODE;
+		sessionStorage.setItem('mode', DEFAULT_MODE);
+	}
+	setMode(storedMode);
+}
+init();
 
 
