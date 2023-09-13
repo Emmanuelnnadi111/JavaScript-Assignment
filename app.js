@@ -175,7 +175,7 @@ console.log(arrStr9.lastIndexOf("Best challenge")); // 2
 //second example 
 let getString = "Typescript";
 let getLastIndexOf = getString.lastIndexOf('p', 9);
-console.log(getLastIndexOf);
+console.log(getLastIndexOf);//8
 
 
 //Array Reduce Method - returns a callback function and iterate on each element of the array
@@ -190,7 +190,7 @@ console.log(reduceArr); // 10
 
 let sum = [2, 3, 4, 5, 6];
 let initial = 0;
-console.log(sum.reduce((a,b) => a + b, initial));
+console.log(sum.reduce((a,b) => a + b, initial));// 20
 
 
 //Array Join Method - converts all the element in an array into a string and separate them with the specified separator 
@@ -238,8 +238,7 @@ const numbers = [1, 2, 3, 4];
 console.log(arrStr13.concat(numbers)); // ['Am loving this challenge', 'This is great', 'Best challenge', 'Finish on time', 1, 2, 3, 4]
 //second Example
 let greet = "Hello ";
-console.log(greet.concat("John"));
-
+console.log(greet.concat("John")); //Hello John
 
 
 //Array Filter Method - returns the element that meets the required condition
@@ -260,7 +259,7 @@ let person = [
 	{name: 'sunny', age: 20, profession: "Programmer"}
 ];
 let personFilter = person.filter((person) => person.profession === "Programmer").sort((a,b)=> a.profession).map(person => person.profession && person.name);
-console.log(personFilter);
+console.log(personFilter);// ['Emma', 'chidel', 'sunny']
 
 // About LocalStorage
 
